@@ -71,7 +71,7 @@ void CloudInit(AInteractionComponent* _aitc)
         name = "cloud-" + std::to_string(i + 1) + "-actor";
         g_Clouds[i] = node->GetActorObject(name);
 
-        srand(time(NULL) + rand());
+        srand((unsigned int)time(NULL) + rand());
         range = 3;
         basic = -1;
         g_Dest[i] = rand() % range + basic;
@@ -79,14 +79,14 @@ void CloudInit(AInteractionComponent* _aitc)
         comp = name + "-transform";
         g_Clouds_Atc[i] = (ATransformComponent*)(g_Clouds[i]->
             GetAComponent(comp));
-        srand(time(NULL) + rand());
+        srand((unsigned int)time(NULL) + rand());
         range = 1920 * 2;
         basic = -1920;
-        fv1 = rand() % range + basic;
-        srand(time(NULL) + rand());
+        fv1 = (float)(rand() % range + basic);
+        srand((unsigned int)time(NULL) + rand());
         range = 1080 * 3;
         basic = -1080 * 2 - 540;
-        fv2 = rand() % range + basic;
+        fv2 = (float)(rand() % range + basic);
         g_Clouds_Atc[i]->SetPosition(MakeFloat3(fv1, fv2, 0.f));
 
         comp = name + "-sprite";
@@ -123,14 +123,14 @@ void CloudUpdate(AInteractionComponent* _aitc, float _deltatime)
             g_Clouds_Atic[i]->ResetTimer("keep");
             g_Clouds_Atic[i]->PauseTimer("keep");
 
-            srand(time(NULL) + rand());
+            srand((unsigned int)time(NULL) + rand());
             range = 1920 * 2;
             basic = -1920;
-            fv1 = rand() % range + basic;
-            srand(time(NULL) + rand());
+            fv1 = (float)(rand() % range + basic);
+            srand((unsigned int)time(NULL) + rand());
             range = 1080 * 3;
             basic = -1080 * 2 - 540;
-            fv2 = rand() % range + basic;
+            fv2 = (float)(rand() % range + basic);
             g_Clouds_Atc[i]->SetPosition(
                 MakeFloat3(fv1, fv2, 0.f));
 

@@ -92,13 +92,13 @@ void GodsInit(AInteractionComponent* _aitc)
         GetActorObjOwner()->GetSceneNodePtr()->
         GetActorObject(name)->GetAComponent(comp));
 
-    srand(time(NULL) + rand());
+    srand((unsigned int)time(NULL) + rand());
     g_Left = rand() % 4;
-    srand(time(NULL) + rand());
+    srand((unsigned int)time(NULL) + rand());
     g_Right = rand() % 4;
     while (g_Left == g_Right)
     {
-        srand(time(NULL) + rand());
+        srand((unsigned int)time(NULL) + rand());
         g_Right = rand() % 4;
     }
 

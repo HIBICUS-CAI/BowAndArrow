@@ -80,11 +80,11 @@ void ExtraSunsInit(AInteractionComponent* _aitc)
             GetAComponent(comp));
         basic = -700;
         range = 1400;
-        srand(time(NULL) + rand());
+        srand((unsigned int)time(NULL) + rand());
         pos.x = (float)(rand() % range + basic);
         basic = -300;
         range = 600;
-        srand(time(NULL) + rand());
+        srand((unsigned int)time(NULL) + rand());
         pos.y = (float)(rand() % range + basic);
         g_Suns_Trans[i]->SetPosition(pos);
 

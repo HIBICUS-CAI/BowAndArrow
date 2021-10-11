@@ -183,7 +183,7 @@ void SunsUpdate(AInteractionComponent* _aitc, float _deltatime)
         }
     }
 
-    int sunSize = g_SunIndex.size();
+    int sunSize = (int)g_SunIndex.size();
     for (int i = 0; i < sunSize; i++)
     {
         if (g_Suns_Colli[i]->IsCompActive() == STATUS::PAUSE)
