@@ -330,9 +330,10 @@ void AimPointUpdate(AInteractionComponent* _aitc,
 
         if (!g_BowHp)
         {
-            ((AAnimateComponent*)(_aitc->GetActorObjOwner()->
+            _aitc->GetActorObjOwner()->
                 GetSceneNodePtr()->GetActorObject("bow-actor")->
-                GetAComponent("bow-actor-animate")))->
+                GetAComponent<AAnimateComponent>(
+                    COMP_TYPE::AANIMATE)->
                 ChangeAnimateTo("broke");
             SetBowSceneEnd(false);
             return;
